@@ -1,0 +1,25 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexPopNicolae/testapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexPopNicolae/testapp/issues"
+  },
+  "homepage": "https://github.com/alexPopNicolae/testapp#readme",
+  "dependencies": {
+    "csswring": "^6.0.1",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
