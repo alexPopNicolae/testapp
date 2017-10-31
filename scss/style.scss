@@ -18,6 +18,7 @@ header {
 .wrapper {
     width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 .navigation {
     background: white;
@@ -48,6 +49,19 @@ header {
                 img {
                     margin-bottom: -3px;
                 }
+            }
+        }
+    }
+    .language_flags {
+        position: absolute;
+        top:5px;
+        right: 0;
+        ul {
+            list-style-type: none;
+            li {
+                display: inline-block;
+                margin-right: 15px;
+                cursor: pointer;
             }
         }
     }
