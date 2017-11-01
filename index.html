@@ -5,10 +5,26 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <div class="sidebar_menu_wrapper">
+        <div class="close_button">
+            <i id="sideMenuCloseButton" class="fa fa-close"></i>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produse</a></li>
+            <li><a href="#">Showroom</a></li>
+            <li><a href="#">Compania</a></li>
+            <li><a href="#">Portofoliu</a></li>
+            <li><a href="#">Solicitare oferta</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main_wrapper">
     <header>
         <nav class="navigation">
             <div class="wrapper">
@@ -34,16 +50,19 @@
                     <li><a href="#">Contact</a></li>
                     <li><a class="search_container" href="#"><img src="img/search.png" /></a></li>
                 </ul>
-                <div class="headline_container">
-                    <h1>Bine ati venit la Prolematex,</h1>
-                    <h2>
-                        producator de ferestre si usi din lemn stratificat cu 19 ani de activitate continua si cu peste 20.000 de produse livrate
-                        cu succes.
-                    </h2>
-                    <a class="button_square" href="#">Descoperiti produsele noastre</a>
+                <div class="menu_button">
+                    <i id="menuButton" class="fa fa-align-justify" aria-hidden="true"></i>
                 </div>
             </div>
         </nav>
+        <div class="headline_container">
+            <h1>Bine ati venit la Prolematex,</h1>
+            <h2>
+                producator de ferestre si usi din lemn stratificat cu 19 ani de activitate continua si cu peste 20.000 de produse livrate
+                cu succes.
+            </h2>
+            <a class="button_square" href="#">Descoperiti produsele noastre</a>
+        </div>
     </header>
     <section>
         <div class="wrapper products">
@@ -248,6 +267,9 @@
             </div>
         </div>
     </footer>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
