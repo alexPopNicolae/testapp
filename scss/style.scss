@@ -75,8 +75,9 @@ header {
     background: white;
     width: 100%;
     height: 95px;
+    position: relative;
     @media screen and (max-width:1200px) {
-        position: fixed;
+        position: relative;
         top: 0px;
         left: 0px;
         right: 0px;
@@ -85,6 +86,13 @@ header {
     .logo {
         display: inline-block;
         margin-top: 12px;
+        @media screen and (max-width:360px) {
+            width: 150px;
+            margin-top:30px;
+            img {
+                width: 100%;
+            }
+        }
     }
     .menu {
         list-style-type: none;
@@ -152,6 +160,11 @@ header {
     margin: 0 auto;
     margin-top: 200px;
     color: white;
+    @media screen and (max-width:600px) {
+        width:90%;
+        margin:0 auto;
+        margin-top: 150px;
+    }
     h1 {
         font-size: 40px;
         text-align: center;
@@ -184,19 +197,24 @@ header {
     }
 }
 .products {
-    &:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
+   
     & > h1 {
         margin-top: 40px;
         margin-bottom: 30px;
         text-align: center;
         color: #19592D;
         font-size: 40px;
+        @media screen and (max-width:500px) {
+            font-size: 20px;
+        }
     }
     .articles_container {
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
         article {
             width: 390px;
             height: 500px;
@@ -205,6 +223,23 @@ header {
             float: left;
             margin-right: 10px;
             margin-bottom: 20px; 
+            overflow: hidden;
+            @media screen and (max-width:1200px) {
+                width: 32%;
+                height: 550px;
+            }
+            @media screen and (max-width:770px) {
+                width: 48%;
+                height: 500px;
+            }
+            
+            @media screen and (max-width:520px) {
+                width: 100%;
+                margin: 10px auto;
+                height: auto;
+                float: none;
+            }
+            
             figure {
                 img {
                     width: 100%;
@@ -218,6 +253,9 @@ header {
                 font-size: 30px;
                 padding: 10px 0px;
                 border-bottom: 1px dotted #CDCDCD;
+                @media screen and (max-width:500px) {
+                    font-size: 20px;
+                }
                 a {
                      color: #19592D;
                      text-decoration: none;
@@ -248,6 +286,9 @@ header {
         text-align: center;
         padding: 30px;
         font-weight: 100;
+        @media screen and (max-width:500px) {
+            font-size: 20px;
+        }
     }
     .work_us_container {
         article {
@@ -256,6 +297,18 @@ header {
             text-align: center;
             float: left;
             margin-bottom: 40px;
+            @media screen and (max-width: 1200px) {
+                width: 32%;
+                margin-bottom: 80px;
+            }
+            @media screen and (max-width:750px) {
+                width: 48%;
+                margin-bottom: 70px;
+            }
+            @media screen and (max-width:500px) {
+                width: 100%;
+                margin-bottom: 40px;
+            }
             figure {
                 width:60px; 
                 height: 60px;
@@ -285,9 +338,13 @@ header {
         text-align: center;
         color:#19592D;
         margin: 30px;
+        @media screen and (max-width:500px) {
+            font-size: 20px;
+        }
     }
     .slider_container {
         position: relative;
+        display: flex;
         &:after {
             content: "";
             display: block;
@@ -300,11 +357,18 @@ header {
             right: -50px;
             left:-50px;
             z-index: 5;
+            @media screen and (max-width:1200px) {
+                right: 0;
+                left: 0;
+            }
             .prew {
                 width: 40px;
                 float: right;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
+                @media screen and (max-width:1200px) {
+                    background: rgba(black, 0.5);
+                }
                 &:hover {
                     background: rgba(black, 0.5);
                 }
@@ -314,14 +378,14 @@ header {
                 float: left;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
+                @media screen and (max-width:1200px) {
+                    background: rgba(black, 0.5);
+                }
                 &:hover {
                     background: rgba(black, 0.5);
                 }
             }
         }
-
-
-
 
         article {
             width: 32%;
@@ -330,7 +394,11 @@ header {
             margin-right: 22px;
             position: relative;
             overflow: hidden;
-            &:last-of-type {
+            display: none;
+            &.visible {
+                display: block;
+            }
+            &:nth-of-type(3) {
                 margin-right: 0;
             }
             img {
@@ -354,17 +422,24 @@ header {
 }
 .contact {
     background: #2F6941;
-    height: 250px;
+    min-height: 250px;
     h1 {
         font-size: 40px;
         text-align: center;
         color:white;
         padding: 10px;
         font-weight: 100;
+        @media screen and (max-width:500px) {
+            font-size: 20px;
+        }
     }
     .places_container {
         width: 90%;
         margin: 0 auto;
+        display: flex;
+        @media screen and (max-width:660px) {
+            display: block;
+        }
         &:after {
             content: "";
             display: block;
@@ -372,11 +447,15 @@ header {
         }
         article {
             border-left: 2px solid white;
-            width: 350px;
+            width: 32%;
             float: left;
             margin-right: 5px;
             color: white;
             padding: 10px;
+            @media screen and (max-width:660px) {
+                width:80%;
+                margin:10px auto;
+            }
             p {
                 padding: 2px;
                 &.bold {
@@ -389,6 +468,9 @@ header {
 .certification {
     background: #266239;
     height: 70px;
+    @media screen and (max-width:520px){
+        height: auto;
+    }
     text-align: center;
     img {
         margin: 20px;
