@@ -11,27 +11,74 @@ $(document).ready(function() {
     $('body').removeClass('no_body_scroll');
    });
 
+   var first = 0;
+   var second = 1;
+   var third = 2;
+   var position = 2;
+   var max = $('.carousel_item').length;
+   var smallScreen = $(window).width() < 500 ? true:false;
+   if(smallScreen) {
+    $('.carousel_item').removeClass('visible');
+    $('.carousel_item').eq(second).addClass('visible');
+   }
+   
    $("#nextButton").on('click', function() {
-       var elements = $('.slider_container > article');
-       var numberOfElements = $('.slider_container > article').length;
-        var first = elements.eq(0);
-        var last = elements.eq(length-1);
-        first.insertAfter(last);
-        elements.first().addClass("visible");
-        elements.first().next().addClass("visible");
-        elements.first().next().next().addClass("visible");
+       if(max!=third+1 && smallScreen==false) {
+           $('.carousel_item').removeClass('visible');
+           first++;
+           second++;
+           third++;
+           position++;
+           $('.carousel_item').eq(first).addClass('visible');
+           $('.carousel_item').eq(second).addClass('visible');
+           $('.carousel_item').eq(third).addClass('visible');
+       }
+       if(max-1 > position && smallScreen==true) {
+        $('.carousel_item').removeClass('visible');
+        first++;
+        second++;
+        third++;
+        position++;
+        $('.carousel_item').eq(position).addClass('visible');
+       }
+
 
    });
 
    $("#prewButton").on('click', function() {
-        var elements = $('.slider_container > article');
-        var numberOfElements = $('.slider_container > article').length;
-        var first = elements.eq(0);
-        var last = elements.eq(length-1);
-        
-        last.insertBefore(first);
-        elements.first().addClass("visible");
-        elements.first().next().addClass("visible");
-        elements.first().next().next().addClass("visible");
+        if(first!=0 && smallScreen==false) {
+            $('.carousel_item').removeClass('visible');
+            first--;
+            second--;
+            third--;
+            position--;
+            $('.carousel_item').eq(first).addClass('visible');
+            $('.carousel_item').eq(second).addClass('visible');
+            $('.carousel_item').eq(third).addClass('visible');
+        }
+        if(position > 0 && smallScreen==true) {
+            $('.carousel_item').removeClass('visible');
+            first--;
+            second--;
+            third--;
+            position--;
+            $('.carousel_item').eq(position).addClass('visible');
+        }
+    });
+
+    $(window).resize(function() {
+        var width = $(window).width();
+        if(width < 500) {
+            smallScreen = true;
+            $('.carousel_item').removeClass('visible');
+            $('.carousel_item').eq(second).addClass('visible');
+        }
+        else {
+            smallScreen = false;
+            $('.carousel_item').removeClass('visible');
+            $('.carousel_item').eq(first).addClass('visible');
+            $('.carousel_item').eq(second).addClass('visible');
+            $('.carousel_item').eq(third).addClass('visible');
+        }
     });
 });
