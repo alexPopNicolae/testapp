@@ -1,3 +1,7 @@
+@font-face {
+    font-family: ProjectFont;
+    src:url('../fonts/SairaSemiCondensed-Regular.ttf');
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -56,7 +60,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: ProjectFont;
     border-bottom: 10px solid #19592D;
 }
 header {
@@ -398,6 +402,9 @@ header {
                     color: white;
                     text-align: center;
                     padding: 5px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }
